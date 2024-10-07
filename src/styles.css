@@ -10,3 +10,16 @@ body, app-root {
 .btn {
     @apply bg-lime-400 p-2 rounded hover:bg-lime-300 w-fit
 }
+
+.container {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
