@@ -1,0 +1,56 @@
+<app-navbar />
+<div class="container mx-auto mt-36 p-2">
+    <form [formGroup]="editForm" (ngSubmit)="editUser()">
+        <div class="mb-3">
+            <div class="mb-3 grid grid-cols-1 sm:grid-cols-3 gap-1">
+
+                <div class="flex flex-col">
+                    <label for="title">Title</label>
+                    <input formControlName="title" type="text" id="title" class="p-2 border border-gray-300 rounded"
+                        [value]="user[0].results[0].name.title" autocomplete="off">
+                </div>
+                <div class="flex flex-col">
+                    <label for="first">First</label>
+                    <input formControlName="first" type="text" id="first" class="p-2 border border-gray-300 rounded"
+                        [value]="user[0].results[0].name.first" autocomplete="off">
+                </div>
+                <div class="flex flex-col">
+                    <label for="last">Last</label>
+                    <input formControlName="last" type="text" id="last" class="p-2 border border-gray-300 rounded"
+                        [value]="user[0].results[0].name.last" autocomplete="off">
+                </div>
+            </div>
+            <div class="mb-3 grid grid-cols-1 sm:grid-cols-3 gap-1">
+                <div class="flex flex-col">
+                    <label for="city">City</label>
+                    <input formControlName="city" type="text" id="city" class="p-2 border border-gray-300 rounded"
+                        [value]="user[0].results[0].location.city" autocomplete="off">
+                </div>
+                <div class="flex flex-col">
+                    <label for="state">State</label>
+                    <input formControlName="state" type="text" id="state" class="p-2 border border-gray-300 rounded"
+                        [value]="user[0].results[0].location.state" autocomplete="off">
+                </div>
+                <div class="flex flex-col">
+                    <label for="country">Country</label>
+                    <input formControlName="country" type="text" id="country" class="p-2 border border-gray-300 rounded"
+                        [value]="user[0].results[0].location.country" autocomplete="off">
+                </div>
+            </div>
+            <div class="mb-3 flex flex-col">
+                <label for="postcode">Postcode</label>
+                <input formControlName="postcode" type="text" id="postcode" class="p-2 border border-gray-300 rounded"
+                    [value]="user[0].results[0].location.postcode" autocomplete="off">
+            </div>
+            <div class="mb-3 flex flex-col">
+                <label for="email">Email</label>
+                <input formControlName="email" type="text" id="email" class="p-2 border border-gray-300 rounded"
+                    [value]="user[0].results[0].email" autocomplete="off">
+            </div>
+        </div>
+        <div class="flex flex-col text-center justify-center items-center gap-2">
+            <a class="bg-red-400 p-2 rounded hover:bg-red-500" [routerLink]="['/usuarios']">Cancelar</a>
+            <button class="btn" type="submit">Editar</button>
+        </div>
+    </form>
+</div>

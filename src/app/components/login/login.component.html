@@ -1,0 +1,19 @@
+<app-navbar />
+<div class="contanier max-w-7xl mx-auto sm:px-24 md:px-32 lg:px-64 mt-0">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="bg-neutral-100 rounded p-10 m-2 shadow">
+            <div class="mb-3 flex flex-col">
+                <label for="usuario" class="form-label">Usuario</label>
+                <input formControlName="usuario" type="email" class="p-2 border border-gray-300 rounded" id="usuario"
+                    autocomplete="off">
+            </div>
+            <div class="mb-3 flex flex-col">
+                <label for="password" class="form-label">Contraseña</label>
+                <input formControlName="password" type="password" class="p-2 border border-gray-300 rounded"
+                    id="password">
+            </div>
+
+            <button type="submit" class="btn">Iniciar Sesión</button>
+        </div>
+    </form>
+</div>

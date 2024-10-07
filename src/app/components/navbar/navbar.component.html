@@ -1,0 +1,9 @@
+<div class="flex flex-row-reverse justify-between items-center bg-gradient-to-r from-slate-300 to-slate-400 px-16 h-32 shadow-lg mb-10 absolute top-0 w-full">
+    <img class="w-16 h-16" src="angular_gradient.png" alt="logo">
+    @if (!isLoginPage) {
+        <div class="flex gap-3 items-center">
+            <p>Usuario: {{currentUser}}</p>
+            <button (click)="logout()" class="btn">Salir</button>
+        </div>
+    }
+</div>

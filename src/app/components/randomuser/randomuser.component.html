@@ -1,0 +1,90 @@
+<app-navbar />
+<div class="container max-w-7xl mx-auto mt-40">
+    <div class="flex justify-center">
+        <button class="btn text-lime-400" [ngClass]="{'animate-ping': usuarios.length == 0}">obtener
+            usuario</button>
+        <button (click)="obtenerUsuario()" class="btn absolute">obtener usuario</button>
+    </div>
+    <hr class="my-5">
+    <div class="overflow-auto">
+        @if (usuarios.length != 0) {
+        <table class="table-auto">
+            <thead>
+                <tr>
+                    <th class="p-3">Picture</th>
+                    <th class="p-3">Gender</th>
+                    <th class="p-3">Title</th>
+                    <th class="p-3">Name</th>
+                    <th class="p-3">Street</th>
+                    <th class="p-3">City</th>
+                    <th class="p-3">State</th>
+                    <th class="p-3">Country</th>
+                    <th class="p-3">Postcode</th>
+                    <th class="p-3">Coordinates</th>
+                    <th class="p-3">Timezone</th>
+                    <th class="p-3">Email</th>
+                    <th class="p-3">Phone</th>
+                    <th class="p-3">Cellphone</th>
+                    <th class="p-3">Date of birth</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let usuario of usuarios" (click)="goToEdit(usuario)"
+                    class="odd:bg-white even:bg-slate-50 hover:bg-lime-200 text-center">
+                    <th>
+                        <div class="flex justify-center">
+                            <img class="w-10 h-10 rounded-full text-center" src={{usuario.results[0].picture.thumbnail}}
+                                alt={{usuario.results[0].name}}>
+                        </div>
+                    </th>
+                    <th>
+                        {{usuario.results[0].gender}}
+                    </th>
+                    <th>
+                        {{usuario.results[0].name.title}}
+                    </th>
+                    <th>
+                        {{usuario.results[0].name.first}} {{usuario.results[0].name.last}}
+                    </th>
+                    <th>
+                        {{usuario.results[0].location.street.number}} {{usuario.results[0].location.street.name}}
+                    </th>
+                    <th>
+                        {{usuario.results[0].location.city}}
+                    </th>
+                    <th>
+                        {{usuario.results[0].location.state}}
+                    </th>
+                    <th>
+                        {{usuario.results[0].location.country}}
+                    </th>
+                    <th>
+                        {{usuario.results[0].location.postcode}}
+                    </th>
+                    <th>
+                        {{usuario.results[0].location.coordinates.latitude}},
+                        {{usuario.results[0].location.coordinates.latitude}}
+                    </th>
+                    <th>
+                        {{usuario.results[0].location.timezone.offset}}
+                    </th>
+                    <th>
+                        {{usuario.results[0].email}}
+                    </th>
+                    <th>
+                        {{usuario.results[0].phone}}
+                    </th>
+                    <th>
+                        {{usuario.results[0].cell}}
+                    </th>
+                    <th>
+                        {{usuario.results[0].dob.date}}
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+        } @else {
+        <p class="text-2xl text-center">No hay usuarios que mostrar, de click en el botón "obtener usuario"</p>
+        }
+    </div>
+</div>
