@@ -34,5 +34,8 @@ export class LoginComponent {
         Swal.fire("Error de acceso", "", "error")
       }
     }
+    else {
+      Swal.fire("Error de acceso", "", "error")
+    }
   }
 }
